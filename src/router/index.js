@@ -6,6 +6,8 @@ import EventLayout from "@/views/event/Layout";
 import EventEdit from "@/views/event/Edit";
 import EventRegister from "@/views/event/Register";
 import About from "../views/About.vue";
+import NotFound from "@/views/event/NotFound";
+import NetworkError from "@/views/NetworkError";
 
 const routes = [
   {
@@ -47,6 +49,22 @@ const routes = [
     path: "/about",
     name: "About",
     component: About
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound
+  },
+  {
+    path: "/404/:resource",
+    name: "404Resource",
+    component: NotFound,
+    props: true
+  },
+  {
+    path: "/networkerror",
+    name: "NetworkError",
+    component: NetworkError
   }
 ];
 
